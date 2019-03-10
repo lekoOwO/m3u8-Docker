@@ -1,0 +1,5 @@
+m3u8_download:
+    build: .
+    volumes:
+        - /volume2/video/m3u8Converted:/recordings
+        - /volume2/Downloads/m3u8s:/playlists
