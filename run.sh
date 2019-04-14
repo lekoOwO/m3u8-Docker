@@ -6,8 +6,6 @@ RECORDINGS_DIR=/recordings
 function record {
   local -r IN=$1
   local -r OUT=$2
-
-  #ffmpeg -re -i "${IN}" -c copy -bsf:a aac_adtstoasc "${OUT}"
   ffmpeg -protocol_whitelist "file,http,https,tcp,tls" -i "${IN}" -vcodec copy -acodec copy -copyts -y "${OUT}"
 }
 
